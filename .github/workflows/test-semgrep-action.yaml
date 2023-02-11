@@ -9,7 +9,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Run semgrep pull request review
-        uses: L3m0nb4tt3ry/review-pull-request@v1.0.0-alpha
+        uses: L3m0nb4tt3ry/review-pull-request@v1.0.1-alpha
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
