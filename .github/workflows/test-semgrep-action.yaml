@@ -6,8 +6,10 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
+      - name: 'Checkout Source Code'
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Run semgrep pull request review
         uses: L3m0nb4tt3ry/review-pull-request@v1.0.4-alpha
         env:
