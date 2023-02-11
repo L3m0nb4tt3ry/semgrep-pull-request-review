@@ -11,7 +11,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run semgrep pull request review
-        uses: L3m0nb4tt3ry/pull-request-review@v0.0.1-alpha-2
+        uses: L3m0nb4tt3ry/pull-request-review@v0.0.1-alpha-3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
