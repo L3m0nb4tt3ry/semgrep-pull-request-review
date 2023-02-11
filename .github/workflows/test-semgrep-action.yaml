@@ -14,5 +14,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
+          BASELINE_COMMIT: ${{ github.event.pull_request.base.sha }}
           COMMIT_ID: ${{ github.event.pull_request.head.sha }}
           SEMGREP_REPORT_NAME: 'result.json'
