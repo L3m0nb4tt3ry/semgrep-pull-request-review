@@ -1,0 +1,18 @@
+name: Build and Deploy
+on:
+  pull_request: {}
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Run semgrep pull request review
+        uses: L3m0nb4tt3ry/semgrep-pull-request-review@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
+          GITHUB_REPOSITORY: $GITHUB_REPOSITORY
+          COMMIT_ID: ${{ github.event.pull_request.head.sha }}
+          SEMGREP_REPORT_NAME: 'result.json'
